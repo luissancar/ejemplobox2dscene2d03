@@ -70,7 +70,7 @@ public class FloorEntiy extends Actor{
     }
 
     public void detach() {
-        body.destroyFixture(fixture);
-        world.destroyBody(body);
+       // body.destroyFixture(fixture);
+       // world.destroyBody(body);
     }
 }

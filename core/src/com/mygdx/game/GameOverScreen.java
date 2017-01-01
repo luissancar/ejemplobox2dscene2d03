@@ -30,6 +30,7 @@ public class GameOverScreen extends BaseScreen {
         retry.addCaptureListener(new ChangeListener() {
             @Override
             public void changed(ChangeEvent event, Actor actor) {
+                // Here I go to the game screen again.
                 game.setScreen(game.gamescreen);
             }
         });
@@ -47,7 +48,7 @@ public class GameOverScreen extends BaseScreen {
 
     @Override
     public void dispose() {
-
+      skin.dispose();
       stage.dispose();
     }
 

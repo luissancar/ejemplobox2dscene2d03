@@ -90,8 +90,8 @@ public class PlayerEntity extends Actor{
     }
 
     public void detach() {
-        body.destroyFixture(fixture);
-        world.destroyBody(body);
+        //body.destroyFixture(fixture);
+       // world.destroyBody(body);
     }
 
     public void setJumping(boolean jumping) {
@@ -108,9 +108,9 @@ public class PlayerEntity extends Actor{
 
     public boolean isAlive() {
         return alive;
-    }
+    }}
 
-    public static class FloorEntiy extends Actor{
+   /* public static class FloorEntiy extends Actor{
         private Texture floor, overfloor;
         private World world;
         private Body body;
@@ -149,4 +149,4 @@ public class PlayerEntity extends Actor{
             world.destroyBody(body);
         }
     }
-}
+}*/

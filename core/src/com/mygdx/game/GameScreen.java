@@ -66,19 +66,27 @@ public class GameScreen extends BaseScreen{
                 }
 
                 if (areCollided(contact,"player","spike")) {
+                    System.out.println(1);
                     if (player.isAlive()){
+                        System.out.println(2);
                         player.setAlive(false);
-                        dieSound.play();
+                        System.out.println(3);
                         music.stop();
-                        stage.addAction(Actions.sequence(
-                                Actions.delay(1.5f),   /// espera 1.5 sg
-                                Actions.run(new Runnable() {  // carga la pantalla gameover
-                                    @Override
-                                    public void run() {
-                                        game.setScreen(game.gameoverscreen);
-                                    }
-                                })
-                        ));}
+                        dieSound.play();
+                        System.out.println(4);
+                        System.out.println(5);
+                        stage.addAction(
+                                Actions.sequence(
+                                        Actions.delay(1.5f),
+                                        Actions.run(new Runnable() {
+
+                                            @Override
+                                            public void run() {
+                                                game.setScreen(game.gameoverscreen);
+                                            }
+                                        })
+                                )
+                        );}
 
                 }
 
@@ -86,6 +94,12 @@ public class GameScreen extends BaseScreen{
 
             @Override
             public void endContact(Contact contact) {
+                // The player is jumping and it is not touching the floor.
+                if (areCollided(contact, "player", "floor")) {
+                    if (player.isAlive()) {
+                        jumpSound.play();
+                    }
+                }
 
             }
 
