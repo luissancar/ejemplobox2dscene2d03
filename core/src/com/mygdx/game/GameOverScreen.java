@@ -47,6 +47,7 @@ public class GameOverScreen extends BaseScreen {
 
     @Override
     public void dispose() {
+
       stage.dispose();
     }
 
